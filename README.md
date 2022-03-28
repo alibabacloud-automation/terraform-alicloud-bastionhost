@@ -13,7 +13,7 @@ These types of resources are supported:
 ```hcl
 module "example" {
   source             = "terraform-alicloud-modules/bastionhost/alicloud"
-  create             = true
+  create_instance    = true
   description        = "your_description"
   license_code       = "bhah_ent_50_asset"
   period             = 1
@@ -21,6 +21,7 @@ module "example" {
   security_group_ids = ["your_security_group_ids"]
   resource_group_id  = "your_resource_group_id"
   
+  create_user         = true
   user_name           = "your_user_name"
   user_source         = "Local"
   password            = "your_password"
@@ -28,10 +29,13 @@ module "example" {
   email               = "your_email"
   display_name        = "your_display_name"
   mobile_country_code = "CN"
-  
-  group_comment   = "your_group_comment"
-  user_group_name = "your_user_group_name"
-  
+
+  create_user_group = true
+  group_comment     = "your_group_comment"
+  user_group_name   = "your_user_group_name"
+
+  create_user_attachment = true
+
 }
 ```
 
