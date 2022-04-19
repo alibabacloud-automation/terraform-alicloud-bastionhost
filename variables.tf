@@ -1,143 +1,147 @@
+#alicloud_bastionhost_instance
 variable "create_instance" {
-  type        = bool
   description = "Whether to create the bastionhost instance."
+  type        = bool
   default     = false
 }
 
+variable "vswitch_id" {
+  description = "VSwitch ID configured to Bastionhost."
+  type        = string
+  default     = ""
+}
+
+variable "security_group_ids" {
+  description = "security group IDs configured to Bastionhost. NOTE: There is a potential diff error because of the order of security_group_ids values indefinite. So, from version 1.160.0, security_group_ids type has been updated as set from list, and you can use tolist to convert it to a list."
+  type        = list(string)
+  default     = []
+}
+
+variable "description" {
+  description = "Description of the instance. This name can have a string of 1 to 63 characters."
+  type        = string
+  default     = ""
+}
+
+variable "license_code" {
+  description = "The package type of Cloud Bastionhost instance. You can query more supported types through the DescribePricingModule."
+  type        = string
+  default     = ""
+}
+
+variable "period" {
+  description = "Duration for initially producing the instance. Valid values: [1~9], 12, 24, 36."
+  type        = number
+  default     = 1
+}
+
+variable "resource_group_id" {
+  description = "The Id of resource group which the Bastionhost Instance belongs. If not set, the resource is created in the default resource group."
+  type        = string
+  default     = ""
+}
+
+variable "enable_public_access" {
+  description = "Whether to Enable the public internet access to a specified Bastionhost instance. The valid values: true, false."
+  type        = bool
+  default     = false
+}
+
+#alicloud_bastionhost_user
 variable "create_user" {
-  type        = bool
   description = "Whether to create the specified bastionhost user."
-  default     = false
-}
-
-variable "create_user_group" {
   type        = bool
-  description = "Whether to create the specified bastionhost user_group."
-  default     = false
-}
-
-variable "create_user_attachment" {
-  type        = bool
-  description = "Whether to create the specified bastionhost user attachment."
   default     = false
 }
 
 variable "instance_id" {
+  description = "An existing bastionhost instance id. It will be ignored when create_instance = true."
   type        = string
-  description = "An existing bastionhost instance id. It will be ignored when create = true"
   default     = ""
 }
 
-#alicloud_bastionhost_instance
-variable "description" {
-  type        = string
-  description = "Description of the instance. This name can have a string of 1 to 63 characters."
-  default     = null
-}
-variable "license_code" {
-  type        = string
-  description = "The package type of Cloud Bastionhost instance. You can query more supported types through the DescribePricingModule."
-  default     = null
-}
-
-variable "period" {
-  type        = number
-  description = "Duration for initially producing the instance. Valid values: [1~9], 12, 24, 36. "
-  default     = 1
-}
-
-variable "vswitch_id" {
-  type        = string
-  description = "VSwitch ID configured to Bastionhost."
-  default     = null
-}
-
-variable "security_group_ids" {
-  type        = list(string)
-  description = " security group IDs configured to Bastionhost. NOTE: There is a potential diff error because of the order of security_group_ids values indefinite. So, from version 1.160.0, security_group_ids type has been updated as set from list, and you can use tolist to convert it to a list."
-  default     = null
-}
-
-variable "resource_group_id" {
-  type        = string
-  description = "The Id of resource group which the Bastionhost Instance belongs. If not set, the resource is created in the default resource group."
-  default     = null
-}
-
-variable "enable_public_access" {
-  type        = bool
-  description = "Whether to Enable the public internet access to a specified Bastionhost instance. The valid values: true, false"
-  default     = false
-}
-
-
-# alicloud_bastionhost_user
-variable "user_comment" {
-  type        = string
-  description = "Specify the New of the User That Created the Remark Information. Supports up to 500 Characters."
-  default     = null
-}
-
 variable "display_name" {
-  type        = string
   description = "Specify the New Created the User's Display Name. Supports up to 128 Characters."
-  default     = null
+  type        = string
+  default     = ""
 }
+
+variable "user_comment" {
+  description = "Specify the New of the User That Created the Remark Information. Supports up to 500 Characters."
+  type        = string
+  default     = ""
+}
+
 variable "email" {
-  type        = string
   description = "Specify the New User's Mailbox."
-  default     = null
-}
-variable "mobile" {
   type        = string
+  default     = ""
+}
+
+variable "mobile" {
   description = "Specify the New of the User That Created a Different Mobile Phone Number from Your."
-  default     = null
+  type        = string
+  default     = ""
 }
 
 variable "mobile_country_code" {
+  description = "Specify the New Create User Mobile Phone Number of the International Domain Name. The Default Value Is the CN."
   type        = string
-  description = "Specify the New Create User Mobile Phone Number of the International Domain Name. The Default Value Is the CN. "
   default     = "CN"
 }
 
-variable "password" {
+variable "user_name" {
+  description = "Specify the New User Name. This Parameter Is Only by Letters, Lowercase Letters, Numbers, and Underscores (_), Supports up to 128 Characters."
   type        = string
+  default     = ""
+}
+
+variable "password" {
   description = "Specify the New User's Password. Supports up to 128 Characters. Description of the New User as the Source of the Local User (That Is, Source Value for Local, this Parameter Is Required."
-  default     = null
+  type        = string
+  default     = ""
 }
 
 variable "user_source" {
-  type        = string
   description = "Specify the New of the User That Created the Source."
-  default     = null
+  type        = string
+  default     = ""
 }
 
 variable "source_user_id" {
-  type        = string
   description = "Specify the Newly Created User Is Uniquely Identified. Indicates That the Parameter Is a Bastion Host Corresponding to the User with the Ram User's Unique Identifier. The Newly Created User Source Grant Permission to a RAM User (That Is, Source Used as a Ram), this Parameter Is Required. You Can Call Access Control of Listusers Interface from the Return Data Userid to Obtain the Parameters."
-  default     = null
+  type        = string
+  default     = ""
 }
 
 variable "user_status" {
-  type        = string
   description = "The status of the resource. Valid values: Frozen, Normal."
-  default     = null
+  type        = string
+  default     = "Normal"
 }
 
-variable "user_name" {
-  type        = string
-  description = "Specify the New User Name. This Parameter Is Only by Letters, Lowercase Letters, Numbers, and Underscores (_), Supports up to 128 Characters."
-  default     = null
+#alicloud_bastionhost_user_group
+variable "create_user_group" {
+  description = "Whether to create the specified bastionhost user_group."
+  type        = bool
+  default     = false
 }
 
-# alicloud_bastionhost_user_group
-variable "group_comment" {
-  type        = string
-  description = "Specify the New Group of Remark Information. Supports up to 500 Characters."
-  default     = null
-}
 variable "user_group_name" {
-  type        = string
   description = "Specify the New Group Name. Supports up to 128 Characters."
-  default     = null
+  type        = string
+  default     = ""
+}
+
+variable "group_comment" {
+  description = "Specify the New Group of Remark Information. Supports up to 500 Characters."
+  type        = string
+  default     = ""
+}
+
+#alicloud_bastionhost_user_attachment
+variable "create_user_attachment" {
+  description = "Whether to create the specified bastionhost user attachment."
+  type        = bool
+  default     = false
 }

@@ -1,55 +1,74 @@
 #alicloud_bastionhost_instance
 variable "description" {
-  type        = string
   description = "Description of the instance. This name can have a string of 1 to 63 characters."
-  default     = "tf_testAcc"
+  type        = string
+  default     = "tf-testacc-description"
 }
 
-#alicloud_bastionhost_user
 variable "license_code" {
-  type        = string
   description = "The package type of Cloud Bastionhost instance. You can query more supported types through the DescribePricingModule."
+  type        = string
   default     = "bhah_ent_50_asset"
 }
 
-variable "password" {
+variable "period" {
+  description = "Duration for initially producing the instance. Valid values: [1~9], 12, 24, 36."
+  type        = number
+  default     = 1
+}
+
+variable "enable_public_access" {
+  description = "Whether to Enable the public internet access to a specified Bastionhost instance. The valid values: true, false."
+  type        = bool
+  default     = false
+}
+
+#alicloud_bastionhost_user
+variable "display_name" {
+  description = "Specify the New Created the User's Display Name. Supports up to 128 Characters."
   type        = string
-  description = "Specify the New User's Password. Supports up to 128 Characters. Description of the New User as the Source of the Local User (That Is, Source Value for Local, this Parameter Is Required."
-  default     = "tf-testAcc-oAupFqRaH24MdOSrsIKsu3qw"
+  default     = "tf-testacc-display-name"
 }
 
 variable "user_comment" {
-  type        = string
   description = "Specify the New of the User That Created the Remark Information. Supports up to 500 Characters."
-  default     = "tf-testAcc-mrPFCPi3MuIloLzTvVzQbUbs"
+  type        = string
+  default     = "tf-testacc-user-comment"
 }
 
 variable "email" {
-  type        = string
   description = "Specify the New User's Mailbox."
-  default     = "tf-testAcc-5V8AgQKKw389irWIePb47aOq@aliyun.com"
+  type        = string
+  default     = "168@aliyun.com"
 }
 
-variable "display_name" {
+variable "mobile" {
+  description = "Specify the New of the User That Created a Different Mobile Phone Number from Your."
   type        = string
-  description = "Specify the New Created the User's Display Name. Supports up to 128 Characters."
-  default     = "tf-testAcc-RZEdvPXF9A3w3ArhFwuAfUoY"
+  default     = "15566666666"
 }
 
-variable "mobile_country_code" {
+variable "password" {
+  description = "Specify the New User's Password. Supports up to 128 Characters. Description of the New User as the Source of the Local User (That Is, Source Value for Local, this Parameter Is Required."
   type        = string
-  description = "Specify the New Create User Mobile Phone Number of the International Domain Name. The Default Value Is the CN. "
-  default     = "HK"
+  default     = "YourPassword123!"
 }
+
+variable "user_status" {
+  description = "The status of the resource. Valid values: Frozen, Normal."
+  type        = string
+  default     = "Normal"
+}
+
 #alicloud_bastionhost_user_group
-variable "group_comment" {
+variable "user_group_name" {
+  description = "Specify the New Group Name. Supports up to 128 Characters."
   type        = string
-  description = "Specify the New Group of Remark Information. Supports up to 500 Characters."
-  default     = "tf-testAcc-6ke&*Cfo/6lOS@jj.o#KRgf"
+  default     = "tf-testacc-user-group"
 }
 
-variable "user_group_name" {
+variable "group_comment" {
+  description = "Specify the New Group of Remark Information. Supports up to 500 Characters."
   type        = string
-  description = "Specify the New Group Name. Supports up to 128 Characters."
-  default     = "tf-testAcc-0T2Sep=samLLheEIbZ"
+  default     = "tf-testacc-group-comment"
 }
