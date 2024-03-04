@@ -27,6 +27,9 @@ module "bastionhost_instance" {
   period               = var.period
   resource_group_id    = data.alicloud_resource_manager_resource_groups.default.ids.0
   enable_public_access = var.enable_public_access
+  bandwidth            = var.bandwidth
+  storage              = var.storage
+  plan_code            = var.plan_code
 
   #alicloud_bastionhost_user
   create_user = false

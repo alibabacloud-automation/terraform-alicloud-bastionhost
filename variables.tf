@@ -47,6 +47,24 @@ variable "enable_public_access" {
   default     = false
 }
 
+variable "bandwidth" {
+  description = "The bandwidth of Cloud Bastionhost instance. If China-Site Account, its valid values: 0 to 150. Unit: Mbit/s. The value must be a multiple of 5. If International-Site Account, its valid values: 0 to 200. Unit: Mbit/s. The value must be a multiple of 10."
+  type        = string
+  default     = ""
+}
+
+variable "storage" {
+  description = "The storage of Cloud Bastionhost instance. Valid values: 0 to 500. Unit: TB."
+  type        = string
+  default     = ""
+}
+
+variable "plan_code" {
+  description = "The plan code of Cloud Bastionhost instance. Valid values: cloudbastion: Basic Edition; cloudbastion_ha: HA Edition."
+  type        = string
+  default     = ""
+}
+
 #alicloud_bastionhost_user
 variable "create_user" {
   description = "Whether to create the specified bastionhost user."
