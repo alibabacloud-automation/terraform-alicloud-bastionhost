@@ -11,6 +11,9 @@ resource "alicloud_bastionhost_instance" "instance" {
   period               = var.period
   resource_group_id    = var.resource_group_id
   enable_public_access = var.enable_public_access
+  bandwidth            = var.bandwidth
+  storage              = var.storage
+  plan_code            = var.plan_code
 }
 
 resource "alicloud_bastionhost_user" "user" {
