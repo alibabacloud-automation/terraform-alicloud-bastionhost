@@ -6,9 +6,6 @@ data "alicloud_vswitches" "default" {
   vpc_id = data.alicloud_vpcs.default.vpcs.0.id
 }
 
-data "alicloud_resource_manager_resource_groups" "default" {
-}
-
 module "security_group" {
   source = "alibaba/security-group/alicloud"
   vpc_id = data.alicloud_vpcs.default.vpcs.0.id
@@ -25,7 +22,6 @@ module "bastionhost_instance" {
   description          = var.description
   license_code         = var.license_code
   period               = var.period
-  resource_group_id    = data.alicloud_resource_manager_resource_groups.default.ids.0
   enable_public_access = var.enable_public_access
   bandwidth            = var.bandwidth
   storage              = var.storage
