@@ -1,19 +1,39 @@
-output "instance_id" {
-  description = "The Instance ID."
-  value       = module.bastionhost_instance.instance_id
+output "this_instance_id" {
+  description = "The ID of the bastionhost instance."
+  value       = module.bastionhost.this_instance_id
 }
 
-output "user_name" {
-  description = "Specify the New User Name. This Parameter Is Only by Letters, Lowercase Letters, Numbers, and Underscores (_), Supports up to 128 Characters."
-  value       = module.bastionhost_user_and_user_group_attachment.user_name
+output "this_user_ids" {
+  description = "Map of user IDs."
+  value       = module.bastionhost.this_user_ids
 }
 
-output "user_id" {
-  description = "The Bastionhost User."
-  value       = module.bastionhost_user_and_user_group_attachment.user_id
+output "this_user_group_name" {
+  description = "The name of the bastionhost user group."
+  value       = module.bastionhost.this_user_group_name
 }
 
-output "user_group_name" {
-  description = "Specify the New Group Name. Supports up to 128 Characters."
-  value       = module.bastionhost_user_and_user_group_attachment.user_group_name
+output "this_user_group_id" {
+  description = "The ID of the bastionhost user group."
+  value       = module.bastionhost.this_user_group_id
+}
+
+output "this_host_group_name" {
+  description = "The name of the bastionhost host group."
+  value       = module.bastionhost.this_host_group_name
+}
+
+output "this_host_group_id" {
+  description = "The ID of the bastionhost host group."
+  value       = module.bastionhost.this_host_group_id
+}
+
+output "this_host_ids" {
+  description = "Map of host IDs."
+  value       = module.bastionhost.this_host_ids
+}
+
+output "this_host_account_ids" {
+  description = "Map of host account IDs."
+  value       = module.bastionhost.this_host_account_ids
 }
