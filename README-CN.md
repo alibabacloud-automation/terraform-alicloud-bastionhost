@@ -1,10 +1,10 @@
 # terraform-alicloud-bastionhost
 
-Terraform module which creates Bastion Host resources on Alibaba Cloud.
+Terraform 模块用于在阿里云上创建堡垒机资源。
 
-English | [简体中文](https://github.com/alibabacloud-automation/terraform-alicloud-bastionhost/blob/main/README-CN.md)
+[English](https://github.com/alibabacloud-automation/terraform-alicloud-bastionhost/blob/main/README.md) | 简体中文
 
-## Usage
+## 用法
 
 <div style="display: block;margin-bottom: 40px;"><div class="oics-button" style="float: right;position: absolute;margin-bottom: 10px;">
   <a href="https://api.aliyun.com/terraform?source=Module&activeTab=document&sourcePath=terraform-alicloud-modules%3A%3Abastionhost&spm=docs.m.terraform-alicloud-modules.bastionhost&intl_lang=EN_US" target="_blank">
@@ -70,7 +70,7 @@ module "bastionhost" {
 }
 ```
 
-## Examples
+## 示例
 
 * [complete](https://github.com/terraform-alicloud-modules/terraform-alicloud-bastionhost/tree/main/examples/complete)
 * [host](https://github.com/terraform-alicloud-modules/terraform-alicloud-bastionhost/tree/main/examples/host)
@@ -136,20 +136,21 @@ No modules.
 | <a name="output_this_user_ids"></a> [this\_user\_ids](#output\_this\_user\_ids) | Map of user IDs. |
 <!-- END_TF_DOCS -->
 
-## Submit Issues
+## 提交问题
 
-If you have any questions when using this module, please [submit an issue](https://github.com/alibabacloud-automation/terraform-alicloud-bastionhost/issues).
+如果您在使用此模块时遇到任何问题，请 [提交问题](https://github.com/alibabacloud-automation/terraform-alicloud-bastionhost/issues)。
 
-## Authors
+## 作者
 
-Created and maintained by Alibaba Cloud Terraform Team(terraform@alibabacloud.com)
+由阿里云 Terraform 团队创建和维护(terraform@alibabacloud.com)
 
-## License
+## 许可证
 
-Apache 2 Licensed. See [LICENSE](https://github.com/alibabacloud-automation/terraform-alicloud-bastionhost/blob/main/LICENSE) for full details.
+Apache 2 许可证。有关完整详细信息，请参阅 [LICENSE](https://github.com/alibabacloud-automation/terraform-alicloud-bastionhost/blob/main/LICENSE)。
 
-## Reference
+## 参考
 
 * [Terraform-Provider-Alicloud Github](https://github.com/alibabacloud/terraform-provider-alicloud)
 * [Terraform-Provider-Alicloud Release](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs)
 * [Terraform-Provider-Alicloud Docs](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs)
+

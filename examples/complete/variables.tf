@@ -90,3 +90,66 @@ variable "group_comment" {
   type        = string
   default     = "tf-testacc-group-comment"
 }
+
+#alicloud_bastionhost_host_group
+variable "host_group_name" {
+  description = "Specify the new host group name. Supports up to 128 characters."
+  type        = string
+  default     = "tf-testacc-host-group"
+}
+
+variable "host_group_comment" {
+  description = "Specify the new host group of remark information. Supports up to 500 characters."
+  type        = string
+  default     = "tf-testacc-host-group-comment"
+}
+
+#alicloud_bastionhost_host
+variable "host_name" {
+  description = "Specify the new host name. Supports up to 128 characters."
+  type        = string
+  default     = "tf-testacc-host"
+}
+
+variable "host_active_address_type" {
+  description = "The active address type of the host. Valid values: Private, Public."
+  type        = string
+  default     = "Private"
+}
+
+variable "host_private_address" {
+  description = "The private IP address of the host."
+  type        = string
+  default     = "172.16.0.10"
+}
+
+variable "host_os_type" {
+  description = "The OS type of the host. Valid values: Linux, Windows."
+  type        = string
+  default     = "Linux"
+}
+
+variable "host_source" {
+  description = "The source of the host. Valid values: Local, Ram."
+  type        = string
+  default     = "Local"
+}
+
+#alicloud_bastionhost_host_account
+variable "host_account_name" {
+  description = "Specify the new host account name. Supports up to 128 characters."
+  type        = string
+  default     = "tf-testacc-host-account"
+}
+
+variable "host_protocol_name" {
+  description = "The protocol name of the host account. Valid values: SSH, RDP, VNC."
+  type        = string
+  default     = "SSH"
+}
+
+variable "host_account_password" {
+  description = "Specify the new host account password. Supports up to 128 characters."
+  type        = string
+  default     = "YourPassword123!"
+}

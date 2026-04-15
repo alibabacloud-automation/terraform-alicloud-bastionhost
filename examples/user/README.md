@@ -1,6 +1,6 @@
-# Complete
+# User
 
-Configuration in this directory creates Bastion Host resources.
+Configuration in this directory creates Bastion Host user resources.
 
 ## Usage
 
