@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/alibabacloud-automation/terraform-alicloud-bastionhost/compare/v1.1.1...v2.0.0) (2026-04-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* add host resources, consolidate variable declarations
+
+### Features
+
+* add host resources, consolidate variable declarations ([d3e8e20](https://github.com/alibabacloud-automation/terraform-alicloud-bastionhost/commit/d3e8e204fc377bb856469efe8f56c5b680977c5b))
+
 ## [1.1.1](https://github.com/alibabacloud-automation/terraform-alicloud-bastionhost/compare/v1.1.0...v1.1.1) (2025-11-27)
 
 ## 1.2.0 (Unreleased)
